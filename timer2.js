@@ -9,7 +9,8 @@ stdin.on('data', (key) => {
   if (key === '\u0003') {
     process.exit();
   } for ( let i = 0; i < key.length; i++){
-     if(Number) {
+     if(Number && key < 10) {
+      console.log('Setting timer for ' + key + ' seconds');
       setTimeout(() => {
         process.stdout.write('\x07');
         }, key * 1000);
